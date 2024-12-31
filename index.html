@@ -12,10 +12,25 @@ html,body{
 	overflow:hidden;
 	background:#000;
 }
+#audio-player {
+  width: 100px;
+  color: #050505;
+  opacity: 100%; /* 设置透明度为50% */
+  display: none; /* 隐藏音乐播放器 */
+}
+#play-button {
+  position: absolute;
+  top: 10px; /* 调整按钮距离顶部的距离 */
+  right: 10px; /* 调整按钮距离左侧的距离 */
+}
 </style>
 
 </head>
 <body>
+  <button id="play-button" onclick="document.getElementById('audio-player').play()">播放</button>
+  <audio id="audio-player" controls autoplay>
+    <source src="css/陈子晴-陪你看星星.mp3" type="audio/mpeg">
+  </audio>
 <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:8888"></canvas>
 <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" ></canvas>
 <div class="overlay">
@@ -317,6 +332,5 @@ initVars();
 frame();
 </script>
 <script src="js/index.js"></script>
-<video controls="" autoplay="" style="display:none; height: 0" name="media"><source src="https://webfs.ali.kugou.com/202212311401/c12fd67b0106b68294c3eb354aec3786/part/0/1516896/KGTX/CLTX001/clip_488850641544fb4c6e14e6b8356d084f.mp3" type="audio/mpeg"></video>
 </body>
 </html>

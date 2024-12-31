@@ -17,7 +17,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('#countdown 3|新|年|快|乐|卉|莹|宝|贝|我爱你 FOR EVER|凡是过往|皆为序章|福起新岁|万事顺遂|愿下一个365天|也要充满热爱|希望你喜欢这个跨年仪式|爱你,宝贝 ❤️|2025 HAPPY NEW YEAR');
+      S.UI.simulate('|#countdown 3|新|年|快|乐|卉|莹|宝|贝|我爱你 FOR EVER|凡是过往|皆为序章|福起新岁|万事顺遂|愿下一个365天|也要充满热爱|我爱你,宝贝 |❤️ |2025 HAPPY NEW YEAR');
     }
 
     S.Drawing.loop(function () {
@@ -287,7 +287,7 @@ S.UI = (function () {
   init();
 
   return {
-    simulate: function (action) {
+    simulate: function (action,color) {
       performAction(action);
     }
   }
@@ -358,7 +358,7 @@ S.Color.prototype = {
 };
 
 
-S.Dot = function (x, y) {
+S.Dot = function (x, y,color) {
   this.p = new S.Point({
     x: x,
     y: y,
@@ -565,7 +565,7 @@ S.ShapeBuilder = (function () {
       return processCanvas();
     },
 
-    letter: function (l) {
+    letter: function (l,color) {
       var s = 0;
 
       setFontSize(fontSize);
